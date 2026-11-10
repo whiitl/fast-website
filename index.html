@@ -1,19 +1,33 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой первый сайт</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex items-center justify-center p-4">
-  <div class="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg border border-slate-100 text-center space-y-4">
-    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">🚀</div>
-    <h1 class="text-2xl font-extrabold text-slate-900">Сайт за 20 минут</h1>
-    <p class="text-sm text-slate-600">Стресс-тест успешно пройден: репозиторий на GitHub и автоматический деплой через Vercel.</p>
-    <div class="pt-2">
-      <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">Статус: Live</span>
-    </div>
+<!-- Переключатель темы -->
+<div class="flex justify-between items-center pb-2 border-b border-slate-100 dark:border-slate-700">
+  <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-400">Стресс-тест</span>
+  <button id="theme-toggle" class="px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:opacity-80 transition flex items-center gap-1.5">
+    <span id="theme-icon">🌙</span>
+    <span id="theme-text">Тёмная тема</span>
+  </button>
+</div>
+
+<!-- Заголовок -->
+<div class="space-y-2">
+  <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">⏱️</div>
+  <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">Сайт за 20 минут</h1>
+  <p class="text-xs text-slate-500 dark:text-slate-400">Код обновлён с помощью ИИ: добавлен таймер и тёмная тема.</p>
+</div>
+
+<!-- Блок таймера -->
+<div class="bg-slate-50 dark:bg-slate-900/70 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
+  <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Осталось времени</div>
+  <div id="timer-display" class="font-mono text-4xl sm:text-5xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">20:00</div>
+  
+  <!-- Управление таймером -->
+  <div class="flex justify-center gap-2 pt-1">
+    <button id="toggle-timer-btn" class="px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition active:scale-95">Пауза</button>
+    <button id="reset-timer-btn" class="px-4 py-1.5 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-200 dark:bg-slate-700 hover:opacity-80 transition active:scale-95">Сбросить</button>
   </div>
-</body>
-</html>
+</div>
+
+<!-- Статус -->
+<div class="pt-1 flex items-center justify-center gap-2">
+  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+  <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Деплой Vercel: Активен</span>
+</div>
